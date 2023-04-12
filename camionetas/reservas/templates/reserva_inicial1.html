@@ -1,0 +1,81 @@
+{% extends 'base_usuario.html' %}
+
+
+
+
+
+{% block content %}
+
+  <body>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-md-6 col-lg-8 col-xl-8">
+        <h1 class="text-center">Reservar Vehiculo Nissan</h1>
+        <br />
+        <div class="card">
+          <div class="card-body">
+            <div class="form-group">
+              <hr size="4" />
+              <p><b>Marca: Nissan </b></p>
+              <p><b>Modelo: NP300</b></p>
+              <p><b>Año: 2020 </b></p>
+              <p><b>Patente: LKJP-55 </b></p>
+              <hr size="4" />
+            </div>
+
+            <form action={% url "reserva_inicialuser1_Add" %} method="POST"
+            enctype="multipart/form-data"> {% csrf_token %}
+            <div class="form-group">
+              <p><b>Motivo del desplazamiento</b></p>
+              <input type="text" name="motivo1" class="form-control" />
+            </div>
+            <br />
+            <div class="form-group">
+              <p><b>Dirección del desplazamiento</b></p>
+              <input type="text" name="direccion1" class="form-control" />
+            </div>
+            <br />
+            <div class="form-group">
+              <p><b>Foto del tacómetro inicial del vehículo</b></p>
+              <input
+                type="file"
+                name="foto_tacometro1"
+                class="form-control"
+                placeholder="Foto del Tacómetro del vehículo"
+              />
+            </div>
+
+            <br />
+            <hr size="4" />
+            <br />
+            <br />
+            <button
+              type="submit"
+              name="opcion"
+              value="agregar_inicial1"
+              class="button-2"
+              href="{% url 'reserva_inicial1_Add' %}"
+            >
+              Enviar
+            </button>
+            <br />
+            
+          </form>
+            
+            <br /><a class="button-1" href="{% url 'home_user' %}">
+              Volver a Home
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+
+{% endblock %}
+</html>
+

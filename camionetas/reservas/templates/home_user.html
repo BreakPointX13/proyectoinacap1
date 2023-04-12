@@ -1,0 +1,54 @@
+{% extends 'base_usuario.html' %}
+
+
+
+
+
+{% block content %}
+
+<body class="cuerpo">
+    <div class= "row justify-content-center">
+        <div class = "col-sm-12 col-md-6 col-lg-8 col-xl-8">
+            <br>
+            <br>
+            <hr size="9em">
+            <h1 class ="text-center"> Bienvenido al Portal de Reservas de Vehículos </h1>
+            <hr size="9em">
+            <br>
+            <br>
+            <div class="card">
+              <div class="row row-cols-1 row-cols-md-2 g-4">
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="/static/listado.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Reserva de Vehículos</h5>
+                      <p class="card-text">Formulario para reservar un vehículo</p>
+                      <a href="{% url 'opcion_reserva' %}" class="button-2">Ir a Reserva de Vehículos</a>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="/static/agenda.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Retorno de Vehículos</h5>
+                      <p class="card-text">Formulario de retorno de vehículo</p>
+                      <a href="{% url 'opcion_retorno' %}" class="button-2">Ir a Retorno de Vehículos</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+</body>
+
+
+{% endblock %}
+</html>
+
+

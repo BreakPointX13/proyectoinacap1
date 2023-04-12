@@ -1,0 +1,71 @@
+{% extends 'base_admin.html' %}
+
+
+
+
+{% block content %}
+
+
+<br>
+<br>
+<hr size="9em">
+<h3 class="text-center">Bienvenido al Menú de Agenda de vehículos</h3>
+<hr size="9em">
+    <br>
+    <br>
+    <body class="cuerpo">
+        <div class="container" >
+            <div class="row">
+                <div class="col-xs-12 col-lg-12">
+                    <div class="list-group">
+                        <div>
+                        <br>
+                        <br>
+                        <a href="{% url 'crud_agenda_inicial1' %}" class="button-3"> Agendar Vehiculo Nissan</a>
+                        <br>
+                        <br>
+                        <a href="{% url 'crud_agenda_inicial1_listar' %}" class="button-3"> Administrar reservas Vehiculo Nissan</a>
+                        <br>
+                        <br>
+                        <a href="{% url 'crud_agenda_inicial2' %}" class="button-3"> Agendar Vehiculo Peugeot</a>
+                        <br>
+                        <br>
+                        <a href="{% url 'crud_agenda_inicial2_listar' %}" class="button-3"> Administrar reservas Vehiculo Peugeot</a>
+                        <br>
+                        <br>
+                        <a href="{% url 'crud_agenda_final1' %}" class="button-3"> Devolución Vehiculo Nissan</a>
+                        <br>
+                        <br>
+                        <a href="{% url 'crud_agenda_final1_listar' %}" class="button-3"> Administrar devoluciones Vehiculo Nissan</a>
+                        <br>
+                        <br>
+                        <a href="{% url 'crud_agenda_final2' %}" class="button-3"> Devolución Vehiculo Peugeot</a>
+                        <br>
+                        <br>
+                        <a href="{% url 'crud_agenda_final2_listar' %}" class="button-3"> Administrar devoluciones Vehiculo Peugeot</a>
+                        <br>
+                        <br>
+                        <a href="{% url 'crud_vehiculos' %}" class="button-3"> Vehículos</a>
+                        <br>
+                        <br>
+                        <a href="{% url 'home_user' %}" class="button-1"> Ir a Portal de Conductores</a>
+                        <br>
+                        <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+    </body>
+
+{% endblock %}
+
+</html>

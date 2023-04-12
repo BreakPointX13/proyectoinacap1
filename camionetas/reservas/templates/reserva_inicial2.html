@@ -1,0 +1,93 @@
+{% extends 'base_usuario.html' %}
+
+
+
+
+
+{% block content %}
+
+<body>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class = "row justify-content-center">
+        <div class = "col-sm-12 col-md-6 col-lg-8 col-xl-8">
+            <h1 class ="text-center">Devolución Vehiculo Peugeot</h1>
+            <br>
+            <div class ="card">
+                <div class ="card-body">                       
+                        <div class="form-group">
+                            <hr size="4">
+                            <p><b>Marca: Peugeot </b></p>
+                            <p><b>Modelo: Partner</b></p>
+                            <p><b>Año: 2020 </b></p>
+                            <p><b>Patente: LYFV-66 </b></p>
+                            <hr size="4">
+                        </div>
+                        <br>
+                    <form action={% url "reserva_inicial2_Add" %} method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <br>
+                        <div class="form-group">
+                            <p><b>Foto del tacómetro del vehículo al finalizar (Donde están los Kilómetros lo más claro posible)</b></p>
+                            <input type="file" name="foto_tacometro_final2 " class="form-control" placeholder="Foto del Tacómetro del vehículo al finalizar">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <p><b>Recarga de combustible (Sólo en caso de carga)</b></p>
+                            <input type="file" name="recarga_combustible2" class="form-control" placeholder="Recarga de combustible">
+                        </div>
+                        <br>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Observaciones relevantes (Neumático pinchado, choque, vidrios, etc)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <td>
+                                    <input type="text" name="observaciones2" class="form-control"  size="100">
+                                </td>
+                            </tbody>
+                        </table>
+                        
+                    
+                        <br>
+                        <hr size="4">
+                        <br>
+                        <br>
+                        <button type="submit" name="opcion" value="agregar" class="button-2">Enviar</button>  
+                        <br>
+                        <br>
+                        <a class="button-1" href="{% url 'home_user' %}">Volver a Home</a>
+
+            
+                    
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div> 
+        
+
+    
+        
+
+
+
+
+
+
+    
+
+
+</body>
+
+
+{% endblock %}
+
+</html>

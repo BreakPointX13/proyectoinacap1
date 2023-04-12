@@ -1,0 +1,7 @@
+camionetas: Proyecto original para usar en Local
+
+camionetasWeb: Proyecto original para usar en Web
+
+camionetasArchivosWeb: Archivos del proyecto que no se deben tocar. Son para el servidor en web. Respaldan funcionamiento en Web. 
+
+copias: Son para respaldar proyectos en caso de errores.

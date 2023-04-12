@@ -1,0 +1,72 @@
+{% extends 'base_admin.html' %}
+
+
+
+
+
+{% block content %}
+
+    <body>
+        <br>
+        <div class="container">
+        <br><br><br>
+            <div class="row">
+                <form method="post" action="" id="formulario2">
+                    {% csrf_token %} 
+                    <div class="form-group">
+                    {{ form.as_table}}
+                    
+                <input type="submit" class="btn btn-danger" id="enviar" value="Modificar">
+                <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar">
+                <a href="{% url 'crud_vehiculos_listar' %}">Volver a Vehiculos</a>
+                </form>
+            </div>
+            </div>
+        <br>
+        
+        
+        
+
+
+
+
+
+</body>
+
+{% endblock %}
+
+{% block javascript %}
+
+    <script>
+        $(document).ready(function(){
+            $("#enviar").click(function(){
+                var placa = $("#id_placa").val();
+                var marca = $("#id_marca").val();
+                var modelo = $("#id_modelo").val();
+                var color = $("#id_color").val();
+                var tipo = $("#id_tipo").val();
+                var cilindraje = $("#id_cilindraje").val();
+                var precio = $("#id_precio").val();
+                var estado = $("#id_estado").val();
+                var id = $("#id_id").val();
+                var url = "{% url 'crud_vehiculos_modificar' %}";
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: {
+                        placa: placa,
+                        marca: marca,
+                        modelo: modelo,
+                        color: color,
+                        tipo: tipo,
+                        cilindraje: cilindraje,
+                        precio: precio,
+                        estado: estado,
+                        id: id,
+                        csrfmiddlewaretoken: '{{ csrf_token }}'
+                    },
+                    success: function(data){
+                        alert("Vehiculo Modificado");
+                        window.location.href
+
+</html>

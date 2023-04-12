@@ -1,0 +1,40 @@
+{% extends 'base_usuario.html' %}
+
+
+
+
+
+{% block content %}
+
+        <body>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-lg-12 bg-secondary bg-gradient bg-opacity-50">
+                        <h1> Datos de Vehiculos</h1>
+        
+                        <table class="table table-bordered">
+                            <th>ID</th>
+                            <th>Patente</th>
+                            <th>Marca</th>
+                            <th>Modelo</th>
+                            <th>Año</th>
+                            
+                            {% for x in vehiculo %}
+                                <tr>
+                                    <td>{{ x.id_vehiculo }}
+                                    <td>{{ x.patente }}
+                                    <td>{{ x.marca }}
+                                    <td>{{ x.modelo }}
+                                    <td>{{ x.anio }}
+                                    <!-- <td> <a href="{% url 'vehiculos_del' pk=x.id_vehiculo %}">Eliminar</a>
+                                    <td> <a href="{% url 'vehiculos_edit' pk=x.id_vehiculo %}">Editar</a> -->
+                                </tr>
+                            {% endfor %}
+                        </table>
+                        <a href="{% url 'crud_vehiculos' %}" class="button-4" >Volver</a>
+                    </div>
+                </div>
+            </div>       
+        </body>
+
+{% endblock %}

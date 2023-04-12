@@ -1,0 +1,39 @@
+{% extends 'base_usuario.html' %}
+
+
+
+
+
+{% block content %}
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-lg-12 bg-secondary bg-gradient bg-opacity-50">
+                <h1>Datos de Reservas Iniciales 1</h1>
+
+                <table class="table table-bordered">
+                    <th>Foto del tacómetro final</th>
+                    <th>Recarga de combustible</th>
+                    <th>Observaciones relevantes</th>
+
+                    {% for x in reserva_final1 %}
+                        <tr>
+                            <td> <img src="/media/{{x.foto_tacometro_final1}}" style="height: 10em; width:10em;"> </td>
+                            <td> <img src="/media/{{x.recarga_combustible1}}" style="height: 10em; width:10em;"> </td>
+                            <td>{{ x.observaciones1 }}
+                            <td> <a class="btn btn-light text-dark" href="{% url 'reserva_final1_Del' pk=x.id %}">Eliminar</a>
+                                <a class="btn btn-light text-dark" href="{% url 'reserva_final1_Edit' pk=x.id %}">Editar</a>
+                        </tr>
+                    {% endfor %}
+                </table>
+                <a href="{% url 'home_admin' %}" class="button-4">Volver</a>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>       
+</body>
+
+{% endblock %}
+</html>

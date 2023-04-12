@@ -1,0 +1,40 @@
+{% extends 'base_admin.html' %}
+
+
+
+
+
+{% block content %}
+
+<body>
+    <br>
+    <div class="container">
+        <br><br><br>
+        <h1>Modificar Datos</h1>
+        <br>
+        
+
+
+            <div class="row">
+                <form method="post" action="" id="formulario1">
+                    {% csrf_token %} 
+                    <div class="form-group">
+                    {{ form.as_table}}
+                    </div>
+            
+                <input type="submit" class="btn btn-danger" id="enviar" value="Modificar">
+                <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar">
+                <a class="btn btn-dark" href="{% url 'crud_agenda_inicial1_listar' %}">Volver</a>
+               
+                </div>
+            </div>
+        <br>
+
+        </form>      
+</body>
+
+
+
+{% endblock %}
+
+</html>
